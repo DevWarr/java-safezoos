@@ -30,7 +30,7 @@ public class ZooServiceImpl implements ZooService
     }
 
     @Override
-    public Zoo findZooById(long id)
+    public Zoo findZooById(long id) throws EntityNotFoundException
     {
         return zoorepos.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(Long.toString(id)));
@@ -39,7 +39,13 @@ public class ZooServiceImpl implements ZooService
     @Override
     public Zoo findZooByName(String name) throws EntityNotFoundException
     {
-        return null;
+        Zoo z = zoorepos.findByZooname(name);
+
+        if (z == null)
+        {
+                throw new EntityNotFoundException(name);
+        }
+        return z;
     }
 
     @Transactional
