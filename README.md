@@ -52,38 +52,44 @@ For the PUT and POST you can assume you are sent all the data with the appropria
 
 ### You will need to get the following end points working
 
-* GET /animals/count -  that returns a JSON object list listing the animals and a count of how many zoos where they can be found. Use a custom query for this. 
+* [x] GET /animals/count -  that returns a JSON object list listing the animals and a count of how many zoos where they can be found. Use a custom query for this. 
 
-* GET /zoos/zoos/{id} - returns all information related to a zoo based on its id
+* [x] GET /zoos/zoos/{id} - returns all information related to a zoo based on its id
 
-* GET /zoos/{name} - returns all information related to a zoo based on its full name
+* [x] GET /zoos/{name} - returns all information related to a zoo based on its full name
 
 
 ### Once the end points are working, enable OAuth2 Security using the following guidelines
 
-* ROLE ADMIN should be allowed to access /admin /animals /zoos
+* [x] ROLE ADMIN should be allowed to access /admin /animals /zoos
 
-* ROLE ZOODATA should be allowed to access /zoos
+* [x] ROLE ZOODATA should be allowed to access /zoos
 
-* ROLE ANIMALDATA should be allowed to access /animals
+* [x] ROLE ANIMALDATA should be allowed to access /animals
 
-* ROLE MGR (manager) should be allowed access /animals /zoos.
+* [x] ROLE MGR (manager) should be allowed access /animals /zoos.
 
 
 ### Stretch Goals
 
-* Expose the end point GET /zoos/zoos/(id) - returns the zoo identified by id with its phone numbers and animals
+* _These Stretch goals were already completed within the Java code. The final stretch related to "/users" endpoints requires slight modification if `UserController.java` was copied from the guided project, but no serious work needed._
 
-* In the PUT /admin/zoos endpoint, return in the header a link to the zoo created with the endpoint /zoos/zoos/{id}
+* [x] Expose the end point GET /zoos/zoos/{id} - returns the zoo identified by id with its phone numbers and animals
+  * _Already completed above._
 
-* Expose the end point DELETE /admin/zoos/{zooid}/animals/{animalid} - delete the zoo animal combination based off of ids. 
+* [x] In the PUT /admin/zoos/{id} endpoint, return in the header a link to the zoo created with the endpoint /zoos/zoos/{id}
+  * _Already completed within the Java code._
+
+* [x] Expose the end point DELETE /admin/zoos/{zooid}/animals/{animalid} - delete the zoo animal combination based off of ids. 
   * Hint: @PathVariable("zooid") long zooid, @PathVariable("animalid") long animalid
+  * _Already completed within the Java code._
 
-* Expose the end point POST /admin/zoos/{zooid}/animals/{animalid} - adds the zoo animal combination based off of ids. 
+* [x] Expose the end point POST /admin/zoos/{zooid}/animals/{animalid} - adds the zoo animal combination based off of ids. 
   * Hint: @PathVariable("zooid") long zooid, @PathVariable("animalid") long animalid
+  * _Already completed within the Java code._
 
 * give /ADMIN access to /users
-  * add end point /users/add to add a new user
-  * add end point /users/delete/{id} to delete a user based off of id
-  * add end point /users/viewall to show all the users
-  * add end point /users/view/{id} to show a user based off of if
+  * [x] add end point /users/add to add a new user
+  * [x] add end point /users/delete/{id} to delete a user based off of id
+  * [x] add end point /users/viewall to show all the users
+  * [x] add end point /users/view/{id} to show a user based off of if
